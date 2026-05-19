@@ -66,27 +66,13 @@
 //   }
 // }
 
-
-function twoSum(nums, target) {
+var twoSum = function(nums, target){
   const map = {};
-
-  for (let i = 0; i < nums.length; i++) {
-    console.log("i =", i);
-    console.log("nums[i] =", nums[i]);
-
-    const complement = target - nums[i];
-    console.log("complement =", complement);
-    console.log("map =", map);
-
-    if (map[complement] !== undefined) {
-      console.log("FOUND!");
-      return [map[complement], i];
+  for(let i = 0;i< nums.length; i++){
+    const complement = target - nums[i]
+    if(map[compleement] !== undefined){
+      return [map[complement], i]
     }
-
-    map[nums[i]] = i;
+    return map[nums[i]]= i;
   }
 }
-
-nums = [2, 7]
-target = 9
-console.log(twoSum(nums, target)); 
