@@ -48,17 +48,33 @@
 //     return maxLength;
 // };
 
+// var lengthOfLongestSubstring = function(s){
+//     let set = new Set();
+//     let left = 0;
+//     let maxLength = 0;
+//     for(let right = 0; right < s.length; right++){
+//         while(set.has(s[right])){
+//             set.delete(s[right]);
+//         left++;
+//         }
+//           set.add(s[right]);
+//     maxLength = Math.max(maxLength, right-left + 1)
+//     }
+// return maxLength;
+// }
+
 var lengthOfLongestSubstring = function(s){
     let set = new Set();
     let left = 0;
     let maxLength = 0;
-    for(let right = 0; right < s.length; right++){
-        while(set.has(s[right])){
-            set.add(s[right]);
-        left++;
+    for(let right = 0; right<s.length; right++){
+        if(set.has(s[right])){
+            return set.delete(s[right]);
+            left++
         }
-          set.add(s[right]);
-    maxLength = Math.max(maxLength, right-left + 1)
+        set.add(s[right]);
+        maxLength = Math.max(maxLength, right-left +1)
     }
-  
+    return maxLength;
 }
+    

@@ -66,13 +66,24 @@
 //   }
 // }
 
-var twoSum = function(nums, target){
+// var twoSum = function(nums, target){
+//   const map = {};
+//   for(let i = 0;i< nums.length; i++){
+//     const complement = target - nums[i]
+//     if(map[complement] !== undefined){
+//       return [map[complement], i]
+//     }
+//     return map[nums[i]]= i;
+//   }
+// }
+
+var twoSum =function(nums, target){
   const map = {};
-  for(let i = 0;i< nums.length; i++){
-    const complement = target - nums[i]
-    if(map[compleement] !== undefined){
-      return [map[complement], i]
+  for(let i = 0; i<nums.length; i++){
+    let complement = target-nums[i];
+    if(map[complement]!== undefined){
+      return [map[complement],i]
     }
-    return map[nums[i]]= i;
+    return map[nums[i]]=i
   }
 }
