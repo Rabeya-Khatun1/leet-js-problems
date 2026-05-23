@@ -29,22 +29,55 @@
 // -231 <= x <= 231 - 1
 
 
-var reverse = function(x) {
-    let rev= 0;
-    while(x != 0){
-let pop = x % 10;
-x = Math.trunc(x / 10)
+// var reverse = function(x) {
+//     let rev= 0;
+//     while(x != 0){
+// let pop = x % 10;
+// x = Math.trunc(x / 10)
+//     if(rev > 2147483647 /10 || (rev === 2147483647/10 && pop>7)){
+// return 0;
+//     } 
+//     if(rev < -2147483648/10 || (rev === -2147483647/10 && pop<-8)) {
+//         return 0;
+//     }
+//     rev =rev * 10+pop
+//     }
+// return rev;
+// };
+// var reverce = function(x){
+//     let rev = 0;
+//     while(x != 0){
+//         let pop = x % 10;
+//         x = Math.trunc(x/10)
+//         if(rev > 2147483647/10 || (rev === 2147483647/10 && pop>7)){
+//             return 0;
+//         }
+//         if(rev< -2147483648/10 || (rev === -2147483647/0 && pop<-8)){
+//             return 0;
+//         }
+//        rev = rev * 10 + pop
+//     }
+//     return rev;
+// }
 
-    if(rev > 2147483647 /10 || (rev === 2147483647/10 && pop>7)){
-return 0;
-    } 
-    if(rev < -2147483648/10 || (rev === -2147483647/10 && pop<-8)) {
+var reverse = function(x){
+    let rev = 0;
+while(x != 0){
+    let pop = x % 10;
+    x = Math.trunc(x/10)
+    if(rev > 2147483647/10 || (rev === 2147483647/10 && pop>7)){
         return 0;
     }
-    rev =rev * 10+pop
-
+    if(rev < -2147483648/10 || (rev === -2147483647/10 && pop<-8)){
+        return 0;
     }
-
+    rev = rev * 10 + pop
+}
 return rev;
+}
 
-};
+// TEST CASES
+console.log(reverse(123));    // 321
+console.log(reverse(-123));   // -321
+console.log(reverse(120));    // 21
+console.log(reverse(0));      // 0
