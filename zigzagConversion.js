@@ -43,6 +43,63 @@
 
 
 
+// var convert = function(s, numRows) {
+//     if(numRows === 1 || s.length <= numRows) return s;
+//     let row = 0;
+//     let goingDown = false;
+//     for(let char of s){
+//         rows[row]+=char;
+//          if(row===0 || row === numRows-1){
+//         goindDown = !goingDown;
+//     }
+
+// row +=goingDown ? 1 : -1;
+
+//     }
+//    return rows.join("")
+
+// };
+// var convert = function(s, numRows){
+//     if(numRows === 1 || s.length <= numRows) return s;
+//     let rows = Array(numRows).fill("").map(() => "");
+//     let row = 0;
+//     let goingDown = false;
+//     for(let char of s){
+//         rows[row] +=char;
+//         if(row === 0 || row===numRows-1){
+//             goindDown = !goingDown;
+//         }
+//         row+=goingDown ? 1:-1
+//     }
+//     return rows.join("")
+// }
+
+// console.log(convert("PAYPALISHIRING", 3)); // PAHNAPLSIIGYIR
+// console.log(convert("PAYPALISHIRING", 4)); // PINALSIGYAHRPI
+// console.log(convert("A", 1)); // A
+
+
 var convert = function(s, numRows) {
-    
+    if (numRows === 1 || s.length <= numRows) return s;
+
+    let rows = Array(numRows).fill("").map(() => "");
+
+    let row = 0;
+    let goingDown = false;
+
+    for (let char of s) {
+        rows[row] += char;
+
+        if (row === 0 || row === numRows - 1) {
+            goingDown = !goingDown;
+        }
+
+        row += goingDown ? 1 : -1;
+    }
+
+    return rows.join("");
 };
+
+console.log(convert("PAYPALISHIRING", 3)); // PAHNAPLSIIGYIR
+console.log(convert("PAYPALISHIRING", 4)); // PINALSIGYAHRPI
+console.log(convert("A", 1)); // A
