@@ -91,27 +91,49 @@
 // s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
 
 
-var myAtoi = function(s) {
+// var myAtoi = function(s) {
+//     let i = 0;
+//     let n = s.length;
+//     let sign = 1;
+//     let num = 0;
+//     while(i < n && s[i]=== " ") i++;
+//     if(s[i]=== "-" || s[i] === "+"){
+//         if(s[i] === "-") sign = -1;
+//         i++;
+//     }
+//    while(i < n&& s[i] >="0" && s[i] <= "9"){
+//     let digit = s[i] - "0"
+
+// if(num > Math.floor(2147483647/10) || (num=== Math.floor(2147483647/10) && digit>7) ){
+//     return sign === 1 ? 2147483647 : -2147483648
+// }
+
+// num = num *10 + digit
+// i++
+
+//    }
+// return num * sign
+    
+// };
+
+var myAtoi = function(s){
     let i = 0;
     let n = s.length;
     let sign = 1;
     let num = 0;
-    while(i < n && s[i]=== " ") i++;
+    while(i < n && s[i] === " ") i++;
     if(s[i]=== "-" || s[i] === "+"){
-        if(s[i] === "-") sign = -1;
-        i++;
+        if(s[i]==="-") sign = -1;
+        i++
     }
-   while(i < n&& s[i] >="0" && s[i] <= "9"){
-    let digit = s[i] - "0"
 
-if(num > Math.floor(2147483647/10) || (num=== Math.floor(2147483647/10) && digit>7) ){
-    return sign === 1 ? 2147483647 : -2147483648
+    while(i < n && s[i] >= "0" && s[i] <= "9"){
+        let digit = s[i] - "0";
+        if(num > Math.floor(2147483647/10) || (num === Math.floor(2147483647/10) && digit > 7)){
+            return sign === 1 ? 2147483647 : -2147483648
+        }
+        num = num * 10 + digit
+        i++
+    }
+    return num * sign
 }
-
-num = num *10 + digit
-i++
-
-   }
-return num * sign
-    
-};
