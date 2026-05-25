@@ -31,13 +31,35 @@
 // -231 <= x <= 231 - 1
  
 
-var isPalindrome = function(x) {
-  if(x<0 || (x%10 === 0 && x !== 0 ))return false;
+// var isPalindrome = function(x) {
+//   if(x<0 || (x%10 === 0 && x !== 0 ))return false;
+//   let rev = 0;
+//   while(x > rev){
+// let pop = x% 10;
+// rev = rev * 10 + pop;
+// x=  Math.trunc(x/10);
+//   }  
+//   return x === rev || x === Math.trunc(rev/10)
+// };
+
+// var isPalindrom= function(x){
+//   if(x<0 || (x%10 ===0 && x!==0)) return false;
+//   let rev = 0;
+//   while(x>rev){
+//     let pop = x%10
+//     rev = rev* 10 +pop;
+//     x = Math.trunc(x/10)
+//   }
+//   return x=== rev || x === Math.trunc(rev/10)
+// }
+
+var isPalindrome = function (x){
+  if(x<= || (x%10 === 0 && x!== 0)) return false;
   let rev = 0;
-  while(x > rev){
-let pop = x% 10;
-rev = rev * 10 + pop;
-x=  Math.trunc(x/10);
-  }  
-  return x === rev || x === Math.trunc(rev/10)
-};
+  while(x>rev){
+    let pop = x%10;
+    rev = rev*10+pop
+    x = Math.trunc(x/10)
+  }
+  return x===rev || x=== Math.trunc(rev/10)
+}
