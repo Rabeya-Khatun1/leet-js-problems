@@ -33,15 +33,33 @@
 // 2 <= n <= 105
 // 0 <= height[i] <= 104
 
-var maxArea = function(height) {
+// var maxArea = function(height) {
+//     let left = 0;
+//     let right = height.length -1;
+//     let max = 0;
+// while(left< right){
+//         let width = right - left;
+//         let h = Math.min(height[left], height[right])
+//         let area = width * h;
+//        max = Math.max(max, area)
+//         if(height[left] < height[right]){
+//             left++
+//         } else {
+//             right--
+//         }
+//     }
+//     return max;
+// };
+
+var maxArea = function(height){
     let left = 0;
     let right = height.length -1;
     let max = 0;
-while(left< right){
+    while(left< right){
         let width = right - left;
         let h = Math.min(height[left], height[right])
         let area = width * h;
-       max = Math.max(max, area)
+        max = Math.max(max, area)
         if(height[left] < height[right]){
             left++
         } else {
@@ -49,4 +67,4 @@ while(left< right){
         }
     }
     return max;
-};
+}
